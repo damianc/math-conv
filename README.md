@@ -15,6 +15,14 @@ npm i -P math-conv
 ## Examples
 
 ```
+Math.conv(Math.DEC, Math.BIN, 4)
+// '100'
+
+Math.conv(Math.BIN, Math.DEC, 100)
+// '4'
+```
+
+```
 Math.conv(Math.DEC, Math.HEX, 24)
 // '18'
 
