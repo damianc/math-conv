@@ -1,0 +1,16 @@
+{
+  "name": "math-conv",
+  "version": "1.0.0",
+  "description": "Adds new method - `Math.conv()`, converting numbers between different numeral systems.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damianc/math-conv.git"
+  },
+  "author": "damianc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damianc/math-conv/issues"
+  },
+  "homepage": "https://github.com/damianc/math-conv#readme"
+}
