@@ -46,7 +46,7 @@ Math.conv.binToDec(100)
 To add a new system use `Math.conv.addSystem()` method:
 
 ```
-Math.conv.addSystem(code, base)
+Math.conv.addSystem(code, base, addMathConstant = false)
 ```
 
 First line in the code below will cause new methods will be accessible:
@@ -71,11 +71,15 @@ Math.conv.decToOct(DEC)
 
 ## Built-ins
 
-### Constants
-
 * `Math.BIN` for base `2`
 * `Math.DEC` for base `10`
 * `Math.HEX` for base `16`
 
-### Methods
+When adding a new system with the `addSystem()` method, pass third parameter `true` to extend `Math` with a specific constant (uppercase):
 
+```
+Math.conv.addSystem('oct', 8, true);
+
+Math.OCT
+// 8
+```

@@ -11,11 +11,17 @@
     hex: 16
   };
 
-  function addSystem(code, base) {
+  function addSystem(code, base, addMathConstant = false) {
     code = code.toLowerCase();
 
     if (!(code in systems)) {
       systems[code] = base;
+      
+      if (addMathConstant) {
+        Object.defineProperty(Math, code.toUpperCase(), {
+          value: base
+        });
+      }
     }
   }
 
@@ -47,7 +53,7 @@
           const [, fromCode, toCode] = matchedSystems;
           const fromBase = systems[fromCode];
           const toBase = systems[toCode.toLowerCase()];
-          
+
           if (typeof fromBase !== 'undefined' && typeof toBase !== 'undefined') {
             return value => Math.conv(fromBase, toBase, value);
           }
