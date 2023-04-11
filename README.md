@@ -22,20 +22,60 @@ Math.conv(Math.BIN, Math.DEC, 100)
 // '4'
 ```
 
+## Specialized Methods
+
+The `Math.conv` contains a getter that provides an interface to utilize specialized methods:
+
+* `binToDec()`
+* `decToBin()`
+* `hexToDec()`
+* `decToHex()`
+* `binToHex()`
+* `hexToBin()`
+
 ```
-Math.conv(Math.DEC, Math.HEX, 24)
+Math.conv.decToBin(4)
+// '100'
+
+Math.conv.binToDec(100)
+// '4'
+```
+
+## Custom Systems
+
+To add a new system use `Math.conv.addSystem()` method:
+
+```
+Math.conv.addSystem(code, base)
+```
+
+First line in the code below will cause new methods will be accessible:
+
+* value-taking: `octToBin()`, `octToDec()` and `octToHex()`
+* value-giving: `binToOct()`, `decToOct()` and `hexToOct()`
+
+```
+Math.conv.addSystem('oct', 8);
+
+const DEC = 24;
+
+Math.conv.decToHex(DEC)
 // '18'
 
-Math.conv(Math.HEX, Math.OCT, 18)
+Math.conv.hexToOct(18)
 // '30'
 
-Math.conv(Math.DEC, Math.OCT, 24)
+Math.conv.decToOct(DEC)
 // '30'
 ```
 
 ## Built-ins
 
+### Constants
+
 * `Math.BIN` for base `2`
-* `Math.OCT` for base `8`
 * `Math.DEC` for base `10`
 * `Math.HEX` for base `16`
+
+### Methods
+
