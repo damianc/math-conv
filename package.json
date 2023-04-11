@@ -1,6 +1,6 @@
 {
   "name": "math-conv",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Adds new method - `Math.conv()`, converting numbers between different numeral systems.",
   "main": "index.js",
   "repository": {
