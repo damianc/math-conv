@@ -9,7 +9,13 @@
         systems[code] = base;
 
         if (addMathConstant) {
-          Object.defineProperty(Math, code.toUpperCase(), {
+          const constName = code.toUpperCase();
+          
+          if (constName in Math) {
+            throw new Error(constName + ' already exists in Math: cannot override');
+          }
+
+          Object.defineProperty(Math, constName, {
             value: base
           });
         }
